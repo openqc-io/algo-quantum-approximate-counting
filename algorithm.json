@@ -1,0 +1,73 @@
+{
+  "slug": "quantum-approximate-counting",
+  "name": "Quantum Approximate Counting",
+  "version": "1.0.0",
+  "author": "openqc-team",
+  "license": "Apache-2.0",
+  "description": "Estimate the number of solutions to a search problem using Grover iterations combined with quantum phase estimation.",
+  "owner": "openqc",
+  "scope": "catalog",
+  "access": "open",
+  "implementation_mode": "catalog_synced",
+  "industries": [
+    "foundational"
+  ],
+  "techniques": [
+    "gate"
+  ],
+  "difficulty": "intermediate",
+  "computation_model": "gate",
+  "algorithm_type": "circuit",
+  "qubit_count": 6,
+  "min_qubits": 6,
+  "recommended_backends": [
+    "vortex-noiseless"
+  ],
+  "tags": [
+    "optimization",
+    "finance",
+    "grover",
+    "counting",
+    "qpe"
+  ],
+  "input_schema": {
+    "type": "object",
+    "required": [],
+    "properties": {
+      "search_space_bits": {
+        "type": "integer",
+        "description": "Search space qubits (default 3)"
+      },
+      "precision_bits": {
+        "type": "integer",
+        "description": "QPE precision qubits (default 3)"
+      },
+      "num_marked": {
+        "type": "integer",
+        "description": "Number of marked items (default 2)"
+      }
+    }
+  },
+  "output_schema": {
+    "type": "object",
+    "properties": {
+      "estimated_count": {
+        "type": "number"
+      },
+      "actual_count": {
+        "type": "number"
+      },
+      "search_space_size": {
+        "type": "number"
+      }
+    }
+  },
+  "template_path": "template.py",
+  "status": "available",
+  "metadata": {
+    "year_introduced": null,
+    "source": "ported from in-image builtin",
+    "academic_intro": "How many needles are in the haystack? Quantum approximate counting combines Grover's search with phase estimation to count solutions without finding them all \u2014 a prerequisite for quantum Monte Carlo methods used in finance.",
+    "expected_takeaway": "You will see how the algorithm estimates the number of marked items in a search space, with accuracy improving as precision qubits increase."
+  }
+}
