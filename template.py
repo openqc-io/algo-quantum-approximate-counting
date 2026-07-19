@@ -17,7 +17,7 @@ class AlgorithmTemplate:
             "type": "circuit",
             "backend_id": backend,
             "provider": "vortex",
-            "qasm": _build_counting_circuit(
+            "qasm_code": _build_counting_circuit(
                 input_data.get("search_space_bits", 3),
                 input_data.get("precision_bits", 3),
                 input_data.get("num_marked", 2),
